@@ -45,8 +45,8 @@ def making_data_frames(news, lst_dates, lst_head, lst_headline_end, lst_articles
     df = pd.DataFrame(zip(date, head, article), columns=["Date", "Headline", "Article"])
     return df
 
-
-new_df = making_data_frames(this, lst_dates, lst_head, lst_headline_end, lst_articles_start, lst_articles_end)
+lst_dates, lst_head, lst_headline_end, lst_articles_start, lst_articles_end, lst_articles_miss = extracting_placments(cnbc_news)
+new_df = making_data_frames(cnbc_news, lst_dates, lst_head, lst_headline_end, lst_articles_start, lst_articles_end)
 
 years = ["2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018",
          "2019", "2020"]
